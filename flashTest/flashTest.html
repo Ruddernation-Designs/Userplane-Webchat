@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+	
+	<script language="JavaScript">
+		function flashInstalled( flashInstalled )
+		{
+			// This function says whether or not the proper version of Flash is installed
+		
+			alert( "Flash is installed: " + flashInstalled );
+
+			// Here is an example of a page redirect with the true or false			
+			//flashInstalled = flashInstalled ? "true" : "false";
+			//window.location = "nextPage.cfm?flashInstalled=" + flashInstalled;
+		}
+	</script>
+</head>
+
+<body>
+
+	<script language="JavaScript1.1">
+	<!--	
+		var javascript11 = true;
+		var MM_contentVersion = 6;
+		
+		var plugin = (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"]) ? navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin : 0;
+		if ( plugin ) 
+		{
+			var words = navigator.plugins["Shockwave Flash"].description.split(" ");
+			for( var i = 0; i < words.length; ++i )
+			{
+				if( isNaN( parseInt( words[i] ) ) )
+				{
+					continue;
+				}
+				var MM_PluginVersion = words[i]; 
+			}
+			var MM_FlashCanPlay = MM_PluginVersion >= MM_contentVersion;
+		}
+		else if (navigator.userAgent && navigator.userAgent.indexOf( "MSIE" )>=0 && ( navigator.appVersion.indexOf("Win") != -1 ) ) 
+		{
+			document.write('<SCR' + 'IPT LANGUAGE=VBScript\> \n'); //FS hide this from IE4.5 Mac by splitting the tag
+			document.write('on error resume next \n');
+			document.write('MM_FlashCanPlay = ( IsObject( CreateObject( "ShockwaveFlash.ShockwaveFlash." & MM_contentVersion ) ) )\n');
+			document.write('</SCR' + 'IPT\> \n');
+		}
+		
+		if ( MM_FlashCanPlay ) 
+		{
+			document.write('<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" ');
+			document.write('CODEBASE="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab##version=6,0,23,0" ');
+			document.write('WIDTH="18" ');
+			document.write('HEIGHT="18">');
+			document.write('<PARAM NAME="menu" VALUE="false">');
+			document.write('<PARAM NAME="quality" VALUE="high">');
+			document.write('<PARAM NAME="movie" VALUE="flashTest.swf">');
+			document.write('<EMBED SRC="flashTest.swf" ');
+			document.write('WIDTH="18" ');
+			document.write('HEIGHT="18" ');
+			document.write('QUALITY="high" ');
+			document.write('BGCOLOR="white" ');
+			document.write('MENU="false" ');
+			document.write('SWLIVECONNECT="false" ');
+			document.write('TYPE="application/x-shockwave-flash" ');
+			document.write('PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">');
+			document.write('</EMBED>');
+			document.write('</OBJECT>');
+		} 
+		else
+		{
+			flashInstalled( false );
+		}
+	//-->
+	</script>
+	<script language="JavaScript">
+	<!--
+		if( !javascript11 )
+		{
+			flashInstalled( false );
+		}
+	//-->
+	</script>
+	
+</body>
+</html>
